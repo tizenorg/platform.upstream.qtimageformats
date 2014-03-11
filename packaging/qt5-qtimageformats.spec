@@ -25,7 +25,7 @@
 
 Name:       qt5-qtimageformats
 Summary:    Qt Imageformats
-Version:    5.2.2
+Version:    5.2.90+alpha
 Release:    0
 Group:      Base/Libraries
 License:    LGPL-2.1+ or GPL-3.0
@@ -80,6 +80,34 @@ Group:      Base/Libraries
 %description plugin-wbmp
 This package provides the WBMP imageformat plugin
 
+%package plugin-dds
+Summary:    Qt Imageformats - DDS plugin
+Group:      Base/Libraries
+
+%description plugin-dds
+This package provides the DDS imageformat plugin
+
+%package plugin-icns
+Summary:    Qt Imageformats - ICNS plugin
+Group:      Base/Libraries
+
+%description plugin-icns
+This package provides the ICNS imageformat plugin
+
+%package plugin-jp2
+Summary:    Qt Imageformats - JP2 plugin
+Group:      Base/Libraries
+
+%description plugin-jp2
+This package provides the JP2 imageformat plugin
+
+%package plugin-webp
+Summary:    Qt Imageformats - WEBP plugin
+Group:      Base/Libraries
+
+%description plugin-webp
+This package provides the WEBP imageformat plugin
+
 #### Build section
 
 %prep
@@ -116,6 +144,21 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_libdir}/qt5/plugins/imageformats/libqwbmp.so
 
+%files plugin-dds
+%defattr(-,root,root,-)
+%{_libdir}/qt5/plugins/imageformats/libqdds.so
+
+%files plugin-icns
+%defattr(-,root,root,-)
+%{_libdir}/qt5/plugins/imageformats/libqicns.so
+
+%files plugin-jp2
+%defattr(-,root,root,-)
+%{_libdir}/qt5/plugins/imageformats/libqjp2.so
+
+%files plugin-webp
+%defattr(-,root,root,-)
+%{_libdir}/qt5/plugins/imageformats/libqwebp.so
 
 #### No changelog section, separate $pkg.changes contains the history
 
