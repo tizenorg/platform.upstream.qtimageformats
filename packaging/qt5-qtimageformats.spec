@@ -31,6 +31,7 @@ Group:      Base/Libraries
 License:    LGPL-2.1+ or GPL-3.0
 URL:        http://qt.digia.com
 Source0:    %{name}-%{version}.tar.bz2
+Source1001: %{name}.manifest
 BuildRequires:  qt5-qtcore-devel
 BuildRequires:  qt5-qtgui-devel
 Buildrequires:  libtiff-devel  
@@ -112,6 +113,7 @@ This package provides the WEBP imageformat plugin
 
 %prep
 %setup -q -n %{name}-%{version}/qtimageformats
+cp %{SOURCE1001} .
 
 %build
 export QTDIR=/usr/share/qt5
@@ -126,38 +128,47 @@ rm -rf %{buildroot}
 
 %files devel
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/cmake
 
 %files plugin-mng
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqmng.so
 
 %files plugin-tga
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqtga.so
 
 %files plugin-tiff
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqtiff.so
 
 %files plugin-wbmp
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqwbmp.so
 
 %files plugin-dds
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqdds.so
 
 %files plugin-icns
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqicns.so
 
 %files plugin-jp2
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqjp2.so
 
 %files plugin-webp
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/qt5/plugins/imageformats/libqwebp.so
 
 #### No changelog section, separate $pkg.changes contains the history
