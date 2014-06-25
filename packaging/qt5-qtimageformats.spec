@@ -23,6 +23,14 @@
 # This file is based on qtimageformats.spec from Mer project
 # http://merproject.org
 
+%if "%{tizen}" == "2.3"
+%define profile wearable
+%else
+%define _with_tiff 1
+%endif
+
+%bcond_with tiff
+
 Name:       qt5-qtimageformats
 Summary:    Qt Imageformats
 Version:    5.3.0
@@ -34,7 +42,9 @@ Source0:    %{name}-%{version}.tar.bz2
 Source1001: %{name}.manifest
 BuildRequires:  qt5-qtcore-devel
 BuildRequires:  qt5-qtgui-devel
-Buildrequires:  libtiff-devel  
+%if %{with tiff}
+Buildrequires:  libtiff-devel
+%endif
 
 %description
 Qt is a cross-platform application and UI framework. Using Qt, you can
