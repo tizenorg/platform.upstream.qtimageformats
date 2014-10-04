@@ -122,10 +122,10 @@ This package provides the WEBP imageformat plugin
 #### Build section
 
 %prep
-%setup -q -n %{name}-%{version}/qtimageformats
-cp %{SOURCE1001} .
+%setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 export QTDIR=/usr/share/qt5
 touch .git # Make sure syncqt is run
 
