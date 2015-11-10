@@ -33,7 +33,7 @@
 
 Name:       qt5-qtimageformats
 Summary:    Qt Imageformats
-Version:    5.4.1
+Version:    5.5.90+alpha1
 Release:    0
 Group:      Base/Libraries
 License:    LGPL-2.1+ or GPL-3.0
